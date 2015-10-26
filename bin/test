@@ -4,6 +4,6 @@ echo "hello world"
 
 date
 
-echo "Finished."
+echo "Finished"
 
 exit 0
