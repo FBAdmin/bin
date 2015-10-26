@@ -8,6 +8,8 @@ date >> workflow_toolserver.log
 
 echo "Finished" >> workflow_toolserver.log
 
+sudo su - fbadmin -c "ssh -l root eewas01l5 'pkill java'" >> workflow_toolserver.log
+
 cat workflow_toolserver.log | mail -s "log" fl33tb0ard@gmail.com
 
 rm workflow_toolserver.log
