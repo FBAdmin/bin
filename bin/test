@@ -6,7 +6,8 @@ date >> workflow_toolserver.log
 
 #sudo su - fbadmin -c "ssh -l root host 'do'" >> workflow_toolserver.log
 
-echo "Finished" >> workflow_toolserver.log
+echo "Finished @" >> workflow_toolserver.log
+date >> workflow_toolserver.log
 
 cat workflow_toolserver.log | mail -s "log" fl33tb0ard@gmail.com
 
