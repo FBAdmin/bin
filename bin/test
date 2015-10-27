@@ -3,9 +3,14 @@
 touch workflow_toolserver.log
 
 date >> workflow_toolserver.log
+echo " ----------------------- " >> workflow_toolserver.log
 
 sudo su - fbadmin -c "ssh -l root deploy01.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> workflow_toolserver.log
 
+echo " ----------------------- " >> workflow_toolserver.log
+sudo su - fbadmin -c "ssh -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> workflow_toolserver.log
+
+echo " ----------------------- " >> workflow_toolserver.log
 echo "Finished @" >> workflow_toolserver.log
 date >> workflow_toolserver.log
 
