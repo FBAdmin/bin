@@ -1,7 +1,7 @@
 #/bin/bash
 
 logfile="get_nmon.log"
-databases=( zu5re005 zu5re002 )
+databases=( zu5rd005 zu5rd002 zu5rr002 zu5rr005 zu5ad002 zu5ad005 zu5ar002 zu5ar005 )
 
 touch $logfile
 
