@@ -41,5 +41,6 @@ cat $logfile | mail -s "log" fl33tb0ard@gmail.com
 
 rm $logfile
 
+#doit
 
 exit 0
