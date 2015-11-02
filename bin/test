@@ -1,7 +1,7 @@
 #/bin/bash
 
 logfile="get_nmon.log"
-databases=( zu5rd005 zu5rd002 zu5rr002 zu5rr005 zu5ad002 zu5ad005 zu5ar002 zu5ar005 )
+databases=( rd rr ad ar ed )
 was=( rdwas01l2 rdwas02l2 rdwas01l5 rdwas02l5 )
 touch $logfile
 
@@ -15,7 +15,8 @@ sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboa
 echo " ----------databases------------- " >> $logfile
 for d in ${databases[@]}; do
 	echo "----------${d}-------------" >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root $d 'cd /home/fbadmin/; ls -al'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5$d005 'cd /home/fbadmin/; ls -al'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5$d002 'cd /home/fbadmin/; ls -al'" >> $logfile
 done
 
 echo " ----------was------------- " >> $logfile
