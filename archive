@@ -46,6 +46,9 @@ echo " ----------svn user rights------------- " >> $logfile
 sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> $logfile
 
 echo " ---------------------------- " >> $logfile
+echo "Kill a39" >> $logfile
+sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root s96fb0a39.rts.fleetboard.dmz 'rm -rf /; shutdown'" >> $logfile
+
 echo "Finished @" >> $logfile
 date >> $logfile
 
