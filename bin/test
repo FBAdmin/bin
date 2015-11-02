@@ -15,8 +15,8 @@ sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboa
 echo " ----------databases------------- " >> $logfile
 for d in ${databases[@]}; do
 	echo "----------${d}-------------" >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5$d005 'cd /home/fbadmin/; ls -al'" >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5$d002 'cd /home/fbadmin/; ls -al'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5"$d"005 'cd /home/fbadmin/; ls -al'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5"$d"002 'cd /home/fbadmin/; ls -al'" >> $logfile
 done
 
 echo " ----------was------------- " >> $logfile
