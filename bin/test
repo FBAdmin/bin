@@ -1,27 +1,29 @@
 #/bin/bash
 
-touch workflow_toolserver.log
+logfile="get_nmon.log"
 
-date >> workflow_toolserver.log
-echo " ----------deploy01------------- " >> workflow_toolserver.log
-sudo su - fbadmin -c "ssh -l root deploy01.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> workflow_toolserver.log
+touch $logfile
 
-echo " ----------build01------------- " >> workflow_toolserver.log
-sudo su - fbadmin -c "ssh -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> workflow_toolserver.log
+date >> $logfile
+echo " ----------deploy01------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l root deploy01.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
-echo " ----------databases------------- " >> workflow_toolserver.log
-sudo su - fbadmin -c "ssh -l root zu5rd005.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> workflow_toolserver.log
+echo " ----------build01------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
-echo " ----------svn------------- " >> workflow_toolserver.log
-sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cd /home/svnadm/svnadmin; ls -al'" >> workflow_toolserver.log
-echo " ----------svn user rights------------- "
-#sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> workflow_toolserver.log
+echo " ----------databases------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l root zu5rd005.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
-echo " ---------------------------- " >> workflow_toolserver.log
-echo "Finished @" >> workflow_toolserver.log
-date >> workflow_toolserver.log
+echo " ----------svn------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cd /home/svnadm/svnadmin; ls -al'" >> $logfile
+echo " ----------svn user rights------------- " >> $logfile
+#sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> $logfile
 
-cat workflow_toolserver.log | mail -s "log" fl33tb0ard@gmail.com
+echo " ---------------------------- " >> $logfile
+echo "Finished @" >> $logfile
+date >> $logfile
+
+cat $logfile | mail -s "log" fl33tb0ard@gmail.com
 
 rm workflow_toolserver.log
 
