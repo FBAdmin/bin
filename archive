@@ -4,6 +4,7 @@ logfile="get_nmon.log"
 databases=( rd rr ad ar ed )
 was=( rd rr ad ar ed )
 mq=( rdmq01 rdmq02 admq03 admq04 )
+ihs=( rdweb01 rdweb02 adweb01 adweb02 )
 touch $logfile
 
 date >> $logfile
@@ -32,6 +33,11 @@ done
 for m in ${mq[@]}; do
 	echo "----------${m}-------------" >> $logfile
 	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root $m 'cd /home/fbadmin/; ls -al'" >> $logfile
+done
+
+for i in ${ihs[@]}; do
+	echo "----------${i}-------------" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root $i 'cd /home/fbadmin/; ls -al'" >> $logfile
 done
 
 echo " ----------svn------------- " >> $logfile
