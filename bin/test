@@ -12,12 +12,19 @@ echo " ----------build01------------- " >> $logfile
 sudo su - fbadmin -c "ssh -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
 echo " ----------databases------------- " >> $logfile
+echo " ----------zu5rd005------------- " >> $logfile
 sudo su - fbadmin -c "ssh -l root zu5rd005.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
+echo " ----------zu5rr005------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l root zu5rr005.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
+echo " ----------zu5ad005------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l root zu5ad005.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
+echo " ----------zu5ar005------------- " >> $logfile
+sudo su - fbadmin -c "ssh -l root zu5ar005.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
 echo " ----------svn------------- " >> $logfile
 sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cd /home/svnadm/svnadmin; ls -al'" >> $logfile
 echo " ----------svn user rights------------- " >> $logfile
-#sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> $logfile
+sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> $logfile
 
 echo " ---------------------------- " >> $logfile
 echo "Finished @" >> $logfile
