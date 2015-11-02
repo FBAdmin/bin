@@ -13,7 +13,7 @@ echo " ----------build01------------- " >> $logfile
 sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
 echo " ----------databases------------- " >> $logfile
-for d in ${!databases[@]}; do
+for d in ${databases[@]}; do
 	echo "----------${d}-------------" >> $logfile
 	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root $d 'cd /home/fbadmin/; ls -al'" >> $logfile
 done
