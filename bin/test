@@ -12,7 +12,7 @@ sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root deploy01.fleetboard
 echo " ----------build01------------- " >> $logfile
 sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
-echo " ----------database------------- " >> $logfile
+echo " ----------databases------------- " >> $logfile
 for d in ${databases[@]}; do
 	echo "----------${d}-------------" >> $logfile
 	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root zu5"$d"005 'cd /home/fbadmin/; ls -al'" >> $logfile
