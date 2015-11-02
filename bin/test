@@ -15,7 +15,7 @@ sudo su - fbadmin -c "ssh -l root zu5rd005.fleetboard.dmz 'cd /home/fbadmin/; ls
 echo " ----------svn------------- " >> workflow_toolserver.log
 sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cd /home/svnadm/svnadmin; ls -al'" >> workflow_toolserver.log
 echo " ----------svn user rights------------- "
-sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> workflow_toolserver.log
+#sudo su - fbadmin -c "ssh -l svnadm svn.fleetboard.dmz 'cat /home/svnadm/svnadmin/trunk/public-svn-authzfile'" >> workflow_toolserver.log
 
 echo " ---------------------------- " >> workflow_toolserver.log
 echo "Finished @" >> workflow_toolserver.log
