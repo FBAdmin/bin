@@ -2,7 +2,7 @@
 
 logfile="get_nmon.log"
 databases=( zu5rd005 zu5rd002 zu5rr002 zu5rr005 zu5ad002 zu5ad005 zu5ar002 zu5ar005 )
-
+was=( rdwas01l2 rdwas02l2 rdwas01l5 rdwas02l5 )
 touch $logfile
 
 date >> $logfile
@@ -16,6 +16,12 @@ echo " ----------databases------------- " >> $logfile
 for d in ${databases[@]}; do
 	echo "----------${d}-------------" >> $logfile
 	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root $d 'cd /home/fbadmin/; ls -al'" >> $logfile
+done
+
+echo " ----------was------------- " >> $logfile
+for w in ${was[@]}; do
+	echo "----------${w}-------------" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root $w 'cd /home/fbadmin/; ls -al'" >> $logfile
 done
 
 echo " ----------svn------------- " >> $logfile
