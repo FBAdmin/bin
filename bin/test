@@ -5,9 +5,18 @@ databases=( rd rr ad ar ed )
 was=( rd rr ad ar ed )
 touch $logfile
 
+function ssh_root() {
+    local ssh_exit_code
+    ssh -oStrictHostKeyChecking=no -l root "$@"
+    ssh_exit_code=$?
+    [[ $ssh_exit_code -eq 255 ]] && die "ssh to host $1 failed."
+    [[ $ssh_exit_code -ne 0 ]] && die "ssh $@ failed."
+    return $ssh_exit_code
+}
+
 date >> $logfile
 echo " ----------deploy01------------- " >> $logfile
-sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root deploy01.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
+sudo su - fbadmin -c "ssh_root 'cd /home/fbadmin/; ls -al'" >> $logfile
 
 echo " ----------build01------------- " >> $logfile
 sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
