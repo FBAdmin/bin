@@ -18,7 +18,7 @@ function ssh_root() {
 
 date >> $logfile
 echo " ----------deploy01------------- " >> $logfile
-ssh_root 'cd /home/fbadmin/; ls -al' >> $logfile
+sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
 
 echo " ----------build01------------- " >> $logfile
 sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root build01.es.fleetboard.dmz 'cd /home/fbadmin/; ls -al'" >> $logfile
