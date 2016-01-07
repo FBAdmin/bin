@@ -16,10 +16,14 @@ function ssh_root() {
     return $ssh_exit_code
 }
 echo "Copying files to machines." >> $logfile
-for d in ${databases[@]}; do
-	echo "to ${d} " >> $logfile
-
+for w in ${was[@]}; do
+	echo "Copying files to ${w}." >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was01l2 'wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; ./logrotate'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was02l2 'wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; ./logrotate'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was01l5 'wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; ./logrotate'" >> $logfile
+	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was02l5 'wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; ./logrotate'" >> $logfile
 done
+
 
 date >> $logfile
 echo " ----------deploy01------------- " >> $logfile
