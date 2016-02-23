@@ -7,14 +7,14 @@ mq=( rdmq01 rdmq02 admq03 admq04 )
 ihs=( rdweb01 rdweb02 adweb01 adweb02 )
 touch $logfile
 
-echo "Copying files to machines." >> $logfile
-for w in ${was[@]}; do
-	echo "Copying files to ${w}." >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was01l2 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was02l2 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was01l5 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
-	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was02l5 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
-done
+#echo "Copying files to machines." >> $logfile
+#for w in ${was[@]}; do
+#	echo "Copying files to ${w}." >> $logfile
+#	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was01l2 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
+#	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was02l2 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
+#	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was01l5 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
+#	sudo su - fbadmin -c "ssh -oStrictHostKeyChecking=no -l root "$w"was02l5 'cd /home/fbadmin/; rm -rf logrotat*; wget https://raw.githubusercontent.com/FBAdmin/bin/master/logrotate; chmod +x logrotate; nohup ./logrotate'" >> $logfile
+#done
 
 
 date >> $logfile
