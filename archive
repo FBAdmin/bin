@@ -7,8 +7,9 @@ mq=( rdmq01 rdmq02 admq03 admq04 )
 ihs=( rdweb01 rdweb02 adweb01 adweb02 )
 touch $logfile
 
-ls -al /home/fbadmin/scripts/configuration_management/trunk/release/bin/autodeploy/scripts >> $logfile
-ls -al /home/fbadmin/scripts/configuration_management/justin_scripts/script_enhancements/release >> $logfile
+ls -al /home/fbadmin/scripts/configuration_management/justin_scripts/script_enhancements/release/bin/autodeploy/scripts >> $logfile
+ls -al /home/fbadmin/scripts/configuration_management/justin_scripts/script_enhancements/release/bin/autodeploy >> $logfile
+ls -al /home/fbadmin/scripts/configuration_management/justin_scripts/script_enhancements/release/bin/ >> $logfile
 #echo "Copying files to machines." >> $logfile
 #for w in ${was[@]}; do
 #	echo "Copying files to ${w}." >> $logfile
