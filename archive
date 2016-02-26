@@ -10,6 +10,7 @@ touch $logfile
 ls -al /home/fbadmin/scripts/configuration_management/trunk/release/bin/ >> $logfile
 echo "----" >> $logfile 
 #cat /home/fbadmin/scripts/configuration_management/trunk/release/bin/ >> $logfile
+#nummer1 gefunden
 
 #echo "Copying files to machines." >> $logfile
 #for w in ${was[@]}; do
