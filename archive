@@ -8,6 +8,7 @@ ihs=( rdweb01 rdweb02 adweb01 adweb02 )
 touch $logfile
 
 ls -al /home/fbadmin/scripts/configuration_management/trunk/release/bin/ >> $logfile
+
 #cat /home/fbadmin/scripts/configuration_management/trunk/release/bin/ >> $logfile
 #ls -al cat /mnt/nas/02_Install/03_WAS/WAS8/install/ >> $logfile
 #cat /mnt/nas/02_Install/03_WAS/WAS8/install/was_install-httprepo.sh >> $logfile
