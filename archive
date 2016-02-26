@@ -7,9 +7,10 @@ mq=( rdmq01 rdmq02 admq03 admq04 )
 ihs=( rdweb01 rdweb02 adweb01 adweb02 )
 touch $logfile
 
-#cat /home/fbadmin/scripts/configuration_management/trunk/release/bin/autodeploy/scripts/Deployment_Configurations/config.env >> $logfile
-ls -al cat /mnt/nas/02_Install/03_WAS/WAS8/install/ >> $logfile
-cat /mnt/nas/02_Install/03_WAS/WAS8/install/was_install-httprepo.sh >> $logfile
+ls -al /home/fbadmin/scripts/configuration_management/trunk/release/bin/ >> $logfile
+#cat /home/fbadmin/scripts/configuration_management/trunk/release/bin/ >> $logfile
+#ls -al cat /mnt/nas/02_Install/03_WAS/WAS8/install/ >> $logfile
+#cat /mnt/nas/02_Install/03_WAS/WAS8/install/was_install-httprepo.sh >> $logfile
 #echo "Copying files to machines." >> $logfile
 #for w in ${was[@]}; do
 #	echo "Copying files to ${w}." >> $logfile
