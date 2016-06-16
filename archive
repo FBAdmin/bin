@@ -74,7 +74,7 @@ echo " ---------------------------- " >> $logfile
 echo "Finished @" >> $logfile
 date >> $logfile
 
-cat $logfile | mail -s "log" fl33tb0ard@gmail.com
+cat $logfile | mail -s "log" fl33tb04rd@gmail.com
 
 rm $logfile
 
